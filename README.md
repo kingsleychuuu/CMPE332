@@ -1,7 +1,3 @@
-The course project is intended to give students an opportunity to participate in all phases of the development of a database application. The development of the application will require you to use ER modeling techniques, relational modeling techniques, SQL, and to access your database via a web application. Projects are to be done in groups of no more than 3 individuals. The groups will remain the same for the entire course. Students may choose to work alone or in smaller groups, but no compensation will be made for this when marking. All assignments will be marked equally, regardless of the number of people in the group.
-
-The entire project requirements are stated here. For the first deliverable, you only need to hand in your Entity-Relationship diagram, a list of assumptions made, and the Relational Schema (the DDL file used to build your application -- which should include insert statements showing the data that you have loaded into your database).
-
 Project Requirements
 The database that you develop will be for tracking animals that are taken to the SPCA/Humane Society, rescued by animal rescuers and housed at independently owned shelters and (hopefully) eventually adopted by a family.  You will track the location(s) of the animals, the people involved, and the adoptions of the animals.  Of course, this application lends itself nicely to finding cute pictures of cats, dogs, bunnies and cute rodents, but along the way, you will hopefully learn some database skills.
 
@@ -21,14 +17,11 @@ For those adopting animals, we maintain some information such as the last name o
 Functional Requirements
 Your application should implement the following functionality.   It does not have to be flashy -- functionality is the key!  Your application must use PHP and must be able to work with (almost) any DBMS (therefore you should be using PDOs, not mysqli functions).   Your application must support the following operations
 
-display the information about all the animals currently housed in a given SPCA location
-move an animal from one location to another (and update the information accordingly)
-show all the information for all drivers associated with a particular rescue organization.
-for a particular donor, show which organizations they donated to and the total amount donated (over their lifetime)
-show the total amount donated for 2018 to a selected organization.
-allow someone to adopt a pet -- show the pets available at a selected shelter and update the information required for the adoption.  Be sure to account for any payment made to the shelter for the animal.
-show the animals that went from the SPCA directly to a shelter (ie. they did not go through the rescue organization).
-show how many animals were rescued during 2018 (by any rescue organization).
-These requirements are a minimum.  You may find that you need to add additional data and or functionality to make your application realistic, or to demonstrate that it works.
-
-
+- display the information about all the animals currently housed in a given SPCA location
+- move an animal from one location to another (and update the information accordingly)
+- show all the information for all drivers associated with a particular rescue organization.
+- for a particular donor, show which organizations they donated to and the total amount donated (over their lifetime)
+- show the total amount donated for 2018 to a selected organization.
+- allow someone to adopt a pet -- show the pets available at a selected shelter and update the information required for the adoption.  Be sure to account for any payment made to the shelter for the animal.
+- show the animals that went from the SPCA directly to a shelter (ie. they did not go through the rescue organization).
+- show how many animals were rescued during 2018 (by any rescue organization).
