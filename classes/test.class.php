@@ -10,15 +10,13 @@ class Test extends Dbh {
 		}
 	}
 
-	public function getOrganizationStmt($name, $ph) {
-		$sql = "SELECT * FROM organization WHERE name = ? AND address = ?";
+	public function getOrganizationStmt($name) {
+		$sql = "SELECT * FROM organization WHERE name = ?";
 		$stmt = $this->connect()->prepare($sql);
-		$stmt->execute([$name, $ph]);
+		$stmt->execute([$name]);
 		$res = $stmt->fetchAll();
-
 		foreach ($res as $key) {
-				echo $key['name'];
-				echo $key['address'];
+				echo $key['postalCode'] . $key['address'];
 		}
 	}
 
