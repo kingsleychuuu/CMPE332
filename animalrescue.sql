@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 08, 2020 at 12:17 PM
+-- Generation Time: Apr 08, 2020 at 01:09 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -79,12 +79,18 @@ CREATE TABLE `donations` (
 --
 
 INSERT INTO `donations` (`donor`, `amount`, `donationDate`, `organizationName`) VALUES
-('barack obama', 1000, '2020-01-01', 'kingston spca'),
+('barack obama', 1000, '2018-01-01', 'kingston spca'),
+('barack obama', 1234, '2018-01-02', 'kingston rescuer 1'),
+('barack obama', 1234, '2018-01-22', 'kingston shelter 1'),
+('barack obama', 2345, '2018-01-08', 'kingston rescuer 3'),
+('barack obama', 4444, '2018-01-16', 'kingston rescuer 4'),
 ('dwayne johnson', 3000, '2018-01-01', 'ottawa spca'),
+('dwayne johnson', 3000, '2018-01-09', 'toronto spca'),
 ('jack dorsey', 1500, '2018-03-03', 'kingston spca'),
-('jeff bezos', 2000, '2020-02-02', 'toronto spca'),
+('jack dorsey', 1500, '2018-03-23', 'kingston shelter 3'),
+('jeff bezos', 2000, '2018-02-02', 'toronto spca'),
 ('mark zuckerberg', 1000, '2018-02-02', 'toronto spca'),
-('robin williams', 3000, '2020-03-03', 'ottawa spca');
+('robin williams', 3000, '2018-03-03', 'ottawa spca');
 
 -- --------------------------------------------------------
 
@@ -163,6 +169,14 @@ CREATE TABLE `family` (
   `phoneNumber` char(10) NOT NULL,
   `address` char(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `family`
+--
+
+INSERT INTO `family` (`name`, `phoneNumber`, `address`) VALUES
+('chu', '6473939051', '123 princess'),
+('obama', '1231231234', '123 white house lmao');
 
 -- --------------------------------------------------------
 
@@ -277,6 +291,19 @@ CREATE TABLE `vetVisit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `vetVisit`
+--
+
+INSERT INTO `vetVisit` (`name`, `reason`, `weight`, `visitDate`, `animalID`, `visitID`) VALUES
+('dr. pepper', 'checking up on this pupper since he\'s a little quiet', 20, '2020-04-01', 5, 1),
+('dr. pepper', 'guys a little quiet', 30, '2020-04-01', 10, 2),
+('dr. dre', 'needs some medicine', 10, '2020-04-06', 20, 3),
+('dr. dre', 'needs some pepper', 5, '2020-04-04', 5, 4),
+('dr. phil', 'needs some advice', 20, '2020-04-03', 1, 5),
+('dr. manhattan', 'needs a checkup', 10, '2020-04-03', 4, 6),
+('dr. strange', 'quick checkup', 20, '2020-04-04', 11, 7);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -294,7 +321,7 @@ ALTER TABLE `animal`
 -- Indexes for table `donations`
 --
 ALTER TABLE `donations`
-  ADD PRIMARY KEY (`donor`),
+  ADD PRIMARY KEY (`donor`,`amount`,`donationDate`,`organizationName`),
   ADD KEY `organizationName` (`organizationName`);
 
 --
