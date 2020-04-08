@@ -5,13 +5,17 @@ $pwd = "";
 $dbname = "animalrescue";
 $dsn = 'mysql:host=' . $host . ';dbname=' . $dbname;
 $pdo = new PDO($dsn, $user, $pwd);
-$sql = "SELECT * FROM organization";
+$sql = "SELECT distinct donor FROM donations";
 $stmt = $pdo->query($sql);
 $stmt->execute();
 $res = $stmt->fetchAll();
 
 //$rescuerName = $_POST['submit'];
-$submitSql = "SELECT * FROM donations WHERE organizationName = ? AND YEAR(donationDate) = 2018";
+$submitSql = "SELECT * FROM donations WHERE donor = ? AND YEAR(donationDate) = 2018";
+//show $outout['organizationName'] . $output['amount']
+//sql for total amount donated:
+//SELECT SUM(amount) FROM donations WHERE donor = ?;
+
 $submitStmt = $pdo->prepare($submitSql);
 $submitStmt->execute([$rescuerName]);
 $submitRes = $submitStmt->fetchAll();
@@ -26,7 +30,7 @@ $submitRes = $submitStmt->fetchAll();
 		<select>
 			<option> --asdfsd-- </option>
 			<?php foreach ($res as $output) { ?>
-			<option> <?php echo $output['name'] ?> </option>
+			<option> <?php echo $output['donor'] ?> </option>
 			<?php } ?>
 		</select>
 		</form>
