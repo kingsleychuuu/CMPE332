@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 05, 2020 at 03:03 AM
+-- Generation Time: Apr 08, 2020 at 12:17 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -39,6 +39,28 @@ CREATE TABLE `animal` (
   `familyName` varchar(40) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `animal`
+--
+
+INSERT INTO `animal` (`id`, `type`, `arrivalDate`, `departureDate`, `spcaBranchName`, `shelterName`, `driverName`, `familyName`) VALUES
+(1, 'dog', '2020-04-08', NULL, 'kingston spca', 'kingston shelter 1', 'mr acura', NULL),
+(2, 'dog', '2019-05-08', NULL, 'kingston spca', 'kingston shelter 2', 'mr audi', NULL),
+(3, 'dog', '2019-11-13', NULL, 'kingston spca', 'kingston shelter 3', 'mr bmw', NULL),
+(4, 'dog', '2019-11-28', NULL, 'kingston spca', 'kingston shelter 1', 'mr daihatsu', NULL),
+(5, 'dog', '2019-12-18', NULL, 'kingston spca', 'kingston shelter 2', 'mr honda', NULL),
+(6, 'dog', '2020-01-22', NULL, 'kingston spca', 'kingston shelter 3', 'mr hyundai', NULL),
+(7, 'dog', '2020-01-23', NULL, 'kingston spca', 'kingston shelter 1', 'mr kia', NULL),
+(8, 'dog', '2020-02-05', NULL, 'kingston spca', 'kingston shelter 2', 'mr lexus', NULL),
+(9, 'dog', '2020-02-13', NULL, 'kingston spca', 'kingston shelter 3', 'mr mercedes', NULL),
+(10, 'dog', '2020-01-24', '2020-04-01', 'kingston spca', 'kingston shelter 3', 'mr toyota', NULL),
+(11, 'cat', '2020-01-05', NULL, 'kingston spca', 'kingston shelter 1', 'mr volvo', NULL),
+(12, 'cat', '2020-02-03', NULL, 'kingston spca', 'kingston shelter 1', NULL, NULL),
+(13, 'cat', '2020-02-11', '2020-04-14', 'kingston spca', 'kingston shelter 3', NULL, NULL),
+(20, 'rabbit', '2020-02-11', '2020-04-14', 'toronto spca', 'kingston shelter 1', NULL, NULL),
+(21, 'cat', '2020-03-09', NULL, 'ottawa spca', NULL, NULL, NULL),
+(30, 'rodent', '2020-04-02', NULL, 'waterloo spca', NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +80,10 @@ CREATE TABLE `donations` (
 
 INSERT INTO `donations` (`donor`, `amount`, `donationDate`, `organizationName`) VALUES
 ('barack obama', 1000, '2020-01-01', 'kingston spca'),
+('dwayne johnson', 3000, '2018-01-01', 'ottawa spca'),
+('jack dorsey', 1500, '2018-03-03', 'kingston spca'),
 ('jeff bezos', 2000, '2020-02-02', 'toronto spca'),
+('mark zuckerberg', 1000, '2018-02-02', 'toronto spca'),
 ('robin williams', 3000, '2020-03-03', 'ottawa spca');
 
 -- --------------------------------------------------------
@@ -80,10 +105,18 @@ CREATE TABLE `driver` (
 --
 
 INSERT INTO `driver` (`name`, `phoneNumber`, `plateNumber`, `driverLicense`, `rescuerName`) VALUES
+('mr acura', '6131234322', 'abcd124', '12345678987654322', 'kingston rescuer 1'),
 ('mr audi', '6131230000', 'asdf123', '11111111111111111', 'kingston rescuer 3'),
 ('mr bmw', '6139990000', 'qwer123', '00000000000000000', 'kingston rescuer 4'),
+('mr daihatsu', '6131230003', 'zxcv125', '98765432123456782', 'kingston rescuer 2'),
 ('mr honda', '6131234321', 'abcd123', '12345678987654321', 'kingston rescuer 1'),
-('mr toyota', '6131230000', 'zxcv123', '98765432123456789', 'kingston rescuer 2');
+('mr hyundai', '6131234300', 'abcd100', '12345678987654300', 'kingston rescuer 1'),
+('mr kia', '6131230011', 'zxcv133', '98765432123456710', 'kingston rescuer 2'),
+('mr lexus', '6131230001', 'zxcv124', '98765432123456780', 'kingston rescuer 2'),
+('mr mercedes', '6139990001', 'qwer124', '00000000000000001', 'kingston rescuer 4'),
+('mr toyota', '6131230000', 'zxcv123', '98765432123456789', 'kingston rescuer 2'),
+('mr volvo', '613123888', 'abcd666', '12345670987654321', 'kingston rescuer 1'),
+('mr vw', '6131230001', 'asdf124', '11111111111111112', 'kingston rescuer 3');
 
 -- --------------------------------------------------------
 
