@@ -11,8 +11,9 @@ $stmt->execute();
 $res = $stmt->fetchAll();
 
 //$rescuerName = $_POST['submit'];
-$submitSql = "SELECT * FROM donations WHERE donor = ? AND YEAR(donationDate) = 2018";
+$submitSql = "SELECT * FROM donations WHERE donor = ?";
 //show $outout['organizationName'] . $output['amount']
+//then add this:
 //sql for total amount donated:
 //SELECT SUM(amount) FROM donations WHERE donor = ?;
 
