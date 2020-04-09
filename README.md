@@ -21,8 +21,9 @@ for mac this was done with the following steps:
 7. paste CMPE332 into htdocs 
 8. browser go to http://localhost:8080/CMPE332/website/
 
-made by kingsley chu and zili 
+made by kingsley chu 
 10182268
-
+and zili 
+20001744
 
 
