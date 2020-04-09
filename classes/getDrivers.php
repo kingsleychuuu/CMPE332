@@ -22,9 +22,9 @@ $submitRes = $submitStmt->fetchAll();
 	<h1>getting all the drivers woooooo</h1>
 	<h2>asdfasd</h2>
 	<label>rescue orgs:
-		<form action = "php.php" method = "post">
+		<form>
 		<select>
-			<option> --asdfsd-- </option>
+			<option> select </option>
 			<?php foreach ($res as $output) { ?>
 			<option> <?php echo $output['name'] ?> </option>
 			<?php } ?>
